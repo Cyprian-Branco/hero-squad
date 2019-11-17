@@ -1,0 +1,61 @@
+{{#partial "content"}}
+    <div class="container">
+        <h1>SQUAD LIST</h1>
+
+        <div class="row">
+            {{#if squads}}
+                {{#each squads}}
+                    <div class="col-md-6">
+                        <!-- Card -->
+
+                        <div class="card card-cascade narrower">
+
+                            <!-- Card image -->
+                            <div class="view view-cascade gradient-card-header purple-gradient text-center">
+
+                                <!-- Title -->
+                                <h2 class="card-header-title mb-3">Squad {{name}}</h2>
+
+
+                            </div>
+
+                            <!-- Card content -->
+                            <div class="card-body card-body-cascade text-center">
+
+                                <!-- Text -->
+                                <p class="card-text">Our Cause: {{cause}} </p>
+                                <p class="card-text">Squad Size: {{max_size}} </p>
+
+                                <hr>
+                                <div class="d-flex card-menu">
+                                    <a href="/squads/{{id}}/delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>Delete</a>
+                                    <a href="/squads/{{id}}/update" class="btn btn-sm btn-success"><i class="fa fa-pencil-alt"></i>Edit</a>
+                                    <a href="/squads/{{id}}/heroes" class="btn btn-sm btn-flat">View Heroes</a>
+                                    <a href="/squads/{{id}}/heroes/new" class="btn btn-sm btn-outline-secondary waves-effect">Add a hero</a>
+                                </div>
+
+
+
+                            </div>
+                            <!-- Card content -->
+
+                        </div>
+                        <!-- Card -->
+
+                    </div>
+
+                {{/each}}
+            {{else}}
+                <h1>No Squads</h1>
+            {{/if}}
+
+
+        </div>
+
+
+
+    </div>
+
+
+{{/partial}}
+{{> layout.hbs}}
