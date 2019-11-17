@@ -41,6 +41,11 @@ public class SquadTest {
         Squad otherSquad = new Squad("Avengers", "Save the universe", 3);
         assertTrue(Squad.getInstances().contains(squad));
         assertTrue(Squad.getInstances().contains(otherSquad));
-
+    }
+    @Test
+    public void testSquadFindById_String(){
+        Squad squad = new Squad("GameChangers", "Climate Change", 3);
+        Squad otherSquad = new Squad("Avengers", "Save the universe", 3);
+        assertEquals(2, Squad.findById(otherSquad.getId()));
     }
 }
