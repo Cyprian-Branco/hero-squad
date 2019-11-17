@@ -23,6 +23,10 @@ public class SquadTest {
         Squad squad = new Squad("GameChangers", "Climate Change", 3);
         assertEquals("GameChangers", squad.getName());
     }
+    @Test
+    public void testGetCause_String(){
+        Squad squad = new Squad("GameChangers", "Climate Change", 3);
+        assertEquals("Climate Change", squad.getCause());
 
 
 }
