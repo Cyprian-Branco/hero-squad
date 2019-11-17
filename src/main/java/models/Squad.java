@@ -42,4 +42,7 @@ public class Squad {
     public List<Hero> getSquadMembers(){
         return squadMembers;
     }
+    public static Squad findById(int id){
+        return instances.get(id-1);
+    }
 }
