@@ -1,0 +1,69 @@
+{{#partial "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <!-- Card -->
+                <div class="card mx-xl-5">
+
+                    <!-- Card body -->
+                    <div class="card-body">
+                        {{#if editSquad}}
+                        <form action="/squads/{{editSquad.id}}/update" method="post">
+                            <p class="h4 text-center py-4">Edit A SQUAD</p>
+
+                            <!-- Default input name -->
+                            <label for="squadName" class="grey-text font-weight-light">Your Squad Name</label>
+                            <input type="text" id="squadName" name="squadName" class="form-control" value="{{editSquad.squadName}}">
+
+                            <br>
+
+                            <label for="cause" class="grey-text font-weight-light">Your Cause</label>
+                            <input type="text" id="cause" name="cause" class="form-control" value="{{editSquad.cause}}">
+                            <br>
+
+                            <label for="maxSize" class="grey-text font-weight-light">Maximum Size</label>
+                            <input type="number" id="maxSize" name="maxSize" class="form-control" value="{{editSquad.maxSize}}">
+
+
+                        {{else}}
+                        <form action="/squad/new" method="post">
+                            <p class="h4 text-center py-4">CREATE A SQUAD</p>
+
+                            <!-- Default input name -->
+                            <label for="squadName" class="grey-text font-weight-light">Your Squad Name</label>
+                            <input type="text" id="squadName" name="squadName" class="form-control">
+
+                            <br>
+
+                            <label for="cause" class="grey-text font-weight-light">Your Cause</label>
+                            <input type="text" id="cause" name="cause" class="form-control">
+                            <br>
+
+                            <label for="maxSize" class="grey-text font-weight-light">Maximum Size</label>
+                            <input type="number" id="maxSize" name="maxSize" class="form-control">
+
+
+                        {{/if}}
+
+                        <div class="text-center py-4 mt-3">
+                            <button class="btn btn-outline-purple" type="submit">SUBMIT<i
+                                    class="fa fa-paper-plane-o ml-2"></i></button>
+                        </div>
+                    </form>
+
+
+                    </div>
+                    <!-- Card body -->
+
+                </div>
+                <!-- Card -->
+            </div>
+            <div class="col-md-3"></div>
+
+        </div>
+
+    </div>
+{{/partial}}
+
+{{> layout.hbs}}
