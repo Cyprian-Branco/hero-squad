@@ -30,7 +30,7 @@ public class SquadTest {
 
     }
     @Test
-    public void testGetMax_size_String() {
+    public void testGetMax_size_Integer() {
         Squad squad = new Squad("GameChangers", "Climate Change", 3);
         assertEquals(3, squad.getMax_size());
     }
