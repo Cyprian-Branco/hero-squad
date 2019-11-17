@@ -1,7 +1,9 @@
+import models.Hero;
 import models.Squad;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +29,16 @@ public class App {
             int max_size = Integer.parseInt(request.queryParams("max_size"));
             Squad squad =  new Squad(name, cause, max_size);
             return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //view all the squads
+        get("/squads", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            ArrayList<Squad> squads = Squad.getInstances();
+            ArrayList<Hero> heroes = Hero.getInstances();
+            model.put("squads", squads);
+            model.put("heroes", heroes);
+            return new ModelAndView("view-squad.hbs")
         }, new HandlebarsTemplateEngine());
     }
 }
