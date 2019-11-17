@@ -24,9 +24,14 @@ public class SquadTest {
         assertEquals("GameChangers", squad.getName());
     }
     @Test
-    public void testGetCause_String(){
+    public void testGetCause_String() {
         Squad squad = new Squad("GameChangers", "Climate Change", 3);
         assertEquals("Climate Change", squad.getCause());
 
-
+    }
+    @Test
+    public void testGetMax_size_String() {
+        Squad squad = new Squad("GameChangers", "Climate Change", 3);
+        assertEquals(3, squad.getMax_size());
+    }
 }
