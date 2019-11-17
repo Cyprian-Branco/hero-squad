@@ -38,7 +38,9 @@ public class SquadTest {
     @Test
     public void testSquadReturnedCorrectly_true(){
         Squad squad = new Squad("GameChangers", "Climate Change", 3);
+        Squad otherSquad = new Squad("Avengers", "Save the universe", 3);
         assertTrue(Squad.getInstances().contains(squad));
+        assertTrue(Squad.getInstances().contains(otherSquad));
 
     }
 }
