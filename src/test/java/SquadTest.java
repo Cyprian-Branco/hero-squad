@@ -35,4 +35,10 @@ public class SquadTest {
         Squad squad = new Squad("GameChangers", "Climate Change", 3);
         assertEquals(3, squad.getMax_size());
     }
+    @Test
+    public void testSquadReturnedCorrectly_true(){
+        Squad squad = new Squad("GameChangers", "Climate Change", 3);
+        assertTrue(Squad.getInstances().contains(squad));
+
+    }
 }
