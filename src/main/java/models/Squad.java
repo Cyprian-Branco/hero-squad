@@ -39,4 +39,7 @@ public class Squad {
     public static ArrayList<Squad>  getInstances() {
         return instances;
     }
+    public List<Hero> getSquadMembers(){
+        return squadMembers;
+    }
 }
