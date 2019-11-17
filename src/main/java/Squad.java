@@ -8,4 +8,10 @@ public class Squad {
         this.cause = cause;
         this.size = size;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    
 }
