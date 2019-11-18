@@ -30,9 +30,14 @@ public class HeroTest {
         assertTrue(true);
     }
     @Test
-    public void testHeroNameInstantiatesCorrectly_true(){
+    public void testHeroNameInstantiatesCorrectly_String(){
         Hero hero = newHero();
         assertEquals("WonderWoman", hero.getName());
+    }
+    @Test
+    public void testHeroAgeInstantiatesCorrectly_Integer(){
+        Hero hero = newHero();
+        assertEquals(64, hero.getAge());
     }
 
 }
