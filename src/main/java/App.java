@@ -48,11 +48,22 @@ public class App {
         //view individual squad details
         get("/squads/:id", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            int squadId = Integer.parseInt(":id");
+            int squadId = Integer.parseInt(request.params(":id"));
             Squad eachSquad = Squad.findById(squadId);
             model.put("squad", eachSquad);
             return new ModelAndView(model, "viewSquadDetails.hbs");
         }, new HandlebarsTemplateEngine());
+
+        //fetch heroes details from form
+        get("/squads/:id/heroes/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int squadId = Integer.parseInt(request.params(":id"));
+            Squad eachSquad = Squad.findById(squadId);
+            model.put("squad", eachSquad);
+            return new ModelAndView(model, "heroes.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //update heroes properties
     }
 }
 
