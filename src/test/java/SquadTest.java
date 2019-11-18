@@ -59,4 +59,11 @@ public class SquadTest {
         assertEquals(formerCause, squad.getCause());
         assertEquals(formerMax_size, squad.getMax_size());
     }
+    @Test
+    public void testDeleteSquad() throws Exception{
+        Squad squad = new Squad("GameChangers", "Climate Change", 3);
+        squad.deleteSquad();
+        assertEquals(0, Squad.getInstances().size());
+
+    }
 }
