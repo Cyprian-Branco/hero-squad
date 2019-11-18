@@ -48,4 +48,15 @@ public class SquadTest {
         Squad otherSquad = new Squad("Avengers", "Save the universe", 3);
         assertEquals(2, Squad.findById(otherSquad.getId()));
     }
+    @Test
+    public void testUpdateSquad() throws Exception{
+        Squad squad = new Squad("GameChangers", "Climate Change", 3);
+        String formerName = squad.getName();
+        String formerCause = squad.getCause();
+        int formerMax_size = squad.getMax_size();
+        squad.update("GameChangers", "Climate Change", 3);
+        assertEquals(formerName, squad.getName());
+        assertEquals(formerCause, squad.getCause());
+        assertEquals(formerMax_size, squad.getMax_size());
+    }
 }
