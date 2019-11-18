@@ -20,5 +20,14 @@ public class HeroTest {
         Hero hero = new Hero("WonderWoman", 64, "Throwing Fire", "Falling in love", 1);
         assertTrue(hero instanceof Hero);
     }
+    public Hero newHero(){
+        return new Hero("WonderWoman", 64, "Throwing Fire", "Falling in love", 1);
+    }
     @Test
+    public void testAddHeroToSquad_String(){
+        Squad squad = new Squad("GameChangers", "Climate Change", 3);
+        Hero hero = newHero();
+        assertTrue(true);
+    }
+    
 }
