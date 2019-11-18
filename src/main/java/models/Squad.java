@@ -39,8 +39,8 @@ public class Squad {
     public static ArrayList<Squad>  getInstances() {
         return instances;
     }
-    public List<Hero> getSquadMembers(){
-        return squadMembers;
+    public String getSquadMembers(){
+        return String.valueOf(squadMembers);
     }
     public static Squad findById(int id){
         return instances.get(id-1);
