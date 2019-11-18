@@ -38,7 +38,7 @@ public class App {
             ArrayList<Hero> heroes = Hero.getInstances();
             model.put("squads", squads);
             model.put("heroes", heroes);
-            return new ModelAndView("view-squad.hbs");
+            return new ModelAndView(model, "view-squad.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }
