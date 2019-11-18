@@ -8,25 +8,6 @@
 
                     <!-- Card body -->
                     <div class="card-body">
-                        {{#if editSquad}}
-                        <form action="/squads/{{editSquad.id}}/update" method="post">
-                            <p class="h4 text-center py-4">Edit A SQUAD</p>
-
-                            <!-- Default input name -->
-                            <label for="name" class="grey-text font-weight-light">Your Squad Name</label>
-                            <input type="text" id="name" name="name" class="form-control" value="{{editSquad.name}}">
-
-                            <br>
-
-                            <label for="cause" class="grey-text font-weight-light">Your Cause</label>
-                            <input type="text" id="cause" name="cause" class="form-control" value="{{editSquad.cause}}">
-                            <br>
-
-                            <label for="max_size" class="grey-text font-weight-light">Maximum Size</label>
-                            <input type="number" id="max_size" name="max_size" class="form-control" value="{{editSquad.max_size}}">
-
-
-                        {{else}}
                         <form action="/squad/new" method="post">
                             <p class="h4 text-center py-4">CREATE A SQUAD</p>
 
@@ -42,9 +23,6 @@
 
                             <label for="max_size" class="grey-text font-weight-light">Maximum Size</label>
                             <input type="number" id="max_size" name="max_size" class="form-control">
-
-
-                        {{/if}}
 
                         <div class="text-center py-4 mt-3">
                             <button class="btn btn-outline-purple" type="submit">SUBMIT<i

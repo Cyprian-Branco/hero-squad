@@ -1,17 +1,22 @@
 {{#partial "content"}}
 
-    <h1>SQUAD</h1>
+    <div class="row">
 
-    <p>Create Your models.Squad: </p>
+        <div class="col-md-12">
 
-    <form action="/squad/new" method="POST">
-        <label for="content">Input models.Squad Name</label>
-        <input id="content" name="content" type="text">
-        <label for="content">Input models.Squad Cause</label>
-        <input id="content" name="content" type="text">
+            <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                <h1 class="heading display-3">HERO SQUAD</h1>
 
-        <button type="submit" class="btn btn-default">Create models.Squad</button>
-    </form>
+                <div id="myBtn">
+                    <a href="/squads" class="btn btn-outline-secondary btn-rounded waves-effect" role="button">View Squads</a>
+                    <a href="/squad/new" class="btn btn-outline-secondary btn-rounded waves-effect" role="button">Add Squad</a>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
 {{/partial}}
 
 {{> layout.hbs}}
