@@ -64,6 +64,16 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
         //update heroes properties
+        post("/squads/:id/heroes/new", (request, response) -> {
+            Map<Object, String>model = new HashMap<>();
+            String name = request.queryParams("name");
+            int age = Integer.parseInt(request.queryParams("age"));
+            String specialPower = request.queryParams("specialPower");
+            String weakness = request.queryParams("weakness");
+            int squadId = Integer.parseInt(request.queryParams(":id"));
+            Hero newHero = new Hero(name, age, specialPower, weakness, squadId);
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
 
