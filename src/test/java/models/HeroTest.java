@@ -50,6 +50,7 @@ public class HeroTest {
         assertEquals("water", hero.getWeakness());
 
     }
+    @Test
     public void testSquadIDInstantiatesCorrectly_Integer(){
         Hero hero = newHero();
         assertEquals(1, hero.getSquadId());
