@@ -1,0 +1,39 @@
+{{#partial "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+                <h1>SQUAD LIST</h1>
+            </div>
+        </div>
+
+
+        <div class="row">
+            {{#if squads}}
+                {{#each squads}}
+                    <div class="col-md-6 offset-3">
+                        <div class="card card-cascade narrower">
+                            <div class="view view-cascade gradient-card-header purple-gradient text-center">
+                                <h2 class="card-header-title mb-3">Squad: {{name}}</h2>
+                            </div>
+                            <div class="card-body card-body-cascade text-center">
+                                <p class="card-text">Our Cause: {{cause}} </p>
+                                <p class="card-text">Squad Size: {{max_size}} </p>
+                                <hr>
+                                <div class="d-flex card-menu">
+                                    <a href="/squads/{{id}}/update" class="btn btn-sm btn-success">Edit</a>
+                                    <a href="/squads/{{id}}/delete" class="btn btn-sm btn-danger">Delete</a>
+                                    <a href="/squads/{{id}}/heroes" class="btn btn-sm btn-flat">View Heroes</a>
+                                    <a href="/squads/{{id}}/heroes/new" class="btn btn-sm btn-outline-secondary waves-effect">Add a hero</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {{/each}}
+            {{else}}
+                <h1>No Squads</h1>
+            {{/if}}
+        </div>
+    </div>
+{{/partial}}
+{{> layout.hbs}}
