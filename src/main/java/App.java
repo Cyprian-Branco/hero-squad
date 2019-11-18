@@ -2,6 +2,7 @@ import models.Hero;
 import models.Squad;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
+import sun.nio.cs.HistoricallyNamedCharset;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -73,6 +74,15 @@ public class App {
             int squadId = Integer.parseInt(request.queryParams(":id"));
             Hero newHero = new Hero(name, age, specialPower, weakness, squadId);
             return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //display all the heroes
+        get("/squads/:id/heroes", (request, response) -> {
+            Map<Object, String> model = new HashMap<>();
+            int squadId = Integer.parseInt(request.params(":id"));
+            Squad eachSquad = Squad.findById(squadId);
+            model.put("heroes", eachSquad.getSquadMembers());
+            return new ModelAndView(model, "view-heroes.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }
