@@ -49,4 +49,9 @@ public class Squad {
     public void addMember(Hero hero) {
         squadMembers.add(hero);
     }
+    public void update(String name, String cause, int max_size){
+        this.name = name;
+        this.cause = cause;
+        this.max_size = max_size;
+    }
 }
