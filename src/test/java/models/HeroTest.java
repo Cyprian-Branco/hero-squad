@@ -17,6 +17,8 @@ public class HeroTest {
     }
     @Test
     public void testHeroInstantiatesCorrectly_true(){
-        Hero hero = new Hero("WonderWoman", 64, "Throwing Fire", 2)
+        Hero hero = new Hero("WonderWoman", 64, "Throwing Fire", "Falling in love", 1);
+        assertTrue(hero instanceof Hero);
     }
+    @Test
 }
