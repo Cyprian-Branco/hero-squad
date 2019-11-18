@@ -55,6 +55,14 @@ public class App {
             return new ModelAndView(model, "viewSquadDetails.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/squads/:id/update", ((request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int squadIdToEdit = Integer.parseInt(request.params("id"));
+            Squad updateSquad = Squad.findById(squadIdToEdit);
+            model.put("updateSquad", updateSquad);
+            return new ModelAndView(model, "squad-form.hbs");
+        }), new HandlebarsTemplateEngine());
+
         //fetch heroes details from form
         get("/squads/:id/heroes/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
@@ -63,6 +71,7 @@ public class App {
             model.put("squad", eachSquad);
             return new ModelAndView(model, "heroes.hbs");
         }, new HandlebarsTemplateEngine());
+
 
         //update heroes properties
         post("/squads/:id/heroes/new", (request, response) -> {
