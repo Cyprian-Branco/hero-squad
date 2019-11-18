@@ -63,6 +63,19 @@ public class App {
             return new ModelAndView(model, "squad-form.hbs");
         }), new HandlebarsTemplateEngine());
 
+        post("/squads/:id/update", ((request, response) -> {
+            Map<String,Object> model = new HashMap<>();
+            String newName = request.queryParams("name");
+            String newCause = request.queryParams("cause");
+            int newMax_size= Integer.parseInt(request.queryParams("max_size"));
+            int squadIdToEdit = Integer.parseInt(request.params("id"));
+            Squad editSquad = Squad.findById(squadIdToEdit);
+            editSquad.update(newName, newCause,newMax_size);
+            return new ModelAndView(model,"success.hbs");
+        }), new HandlebarsTemplateEngine());
+
+        
+
         //fetch heroes details from form
         get("/squads/:id/heroes/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
