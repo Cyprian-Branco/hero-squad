@@ -29,5 +29,10 @@ public class HeroTest {
         Hero hero = newHero();
         assertTrue(true);
     }
-    
+    @Test
+    public void testHeroNameInstantiatesCorrectly_true(){
+        Hero hero = newHero();
+        assertEquals("WonderWoman", hero.getName());
+    }
+
 }
