@@ -1,46 +1,27 @@
 {{#partial "content"}}
+    <br>
     <div class="container">
         <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <!-- Card -->
-                <div class="card mx-xl-5">
-
-                    <!-- Card body -->
-                    <div class="card-body">
-                        <form action="/squad/new" method="post">
-                            <p class="h4 text-center py-4">CREATE A SQUAD</p>
-
-                            <!-- Default input name -->
-                            <label for="name" class="grey-text font-weight-light">Squad Name</label>
-                            <input type="text" id="name" name="name" class="form-control">
-
-                            <br>
-
-                            <label for="cause" class="grey-text font-weight-light">Squad Cause</label>
-                            <input type="text" id="cause" name="cause" class="form-control">
-                            <br>
-
-                            <label for="max_size" class="grey-text font-weight-light">Maximum Size</label>
-                            <input type="number" id="max_size" name="max_size" class="form-control">
-
-                        <div class="text-center py-4 mt-3">
-                            <button class="btn btn-outline-purple" type="submit">SUBMIT<i
-                                    class="fa fa-paper-plane-o ml-2"></i></button>
-                        </div>
-                    </form>
+            <div class="col-md-6 offset-3">
+                <form action="/squad/new" method="POST">
+                <p class="h4 text-center py-4">CREATE A SQUAD</p>
 
 
-                    </div>
-                    <!-- Card body -->
+                <label for="name" class="grey-text font-weight-light">Squad Name</label>
+                <input type="text" id="name" name="name" class="form-control">
 
-                </div>
-                <!-- Card -->
+                <br>
+
+                <label for="cause" class="grey-text font-weight-light">Squad Cause</label>
+                <input type="text" id="cause" name="cause" class="form-control">
+                <br>
+
+                <label for="max_size" class="grey-text font-weight-light">Maximum Size</label>
+                <input type="number" id="max_size" name="max_size" class="form-control">
+                <button class="btn btn-success" type="submit">SUBMIT</button>
+                </form>
             </div>
-            <div class="col-md-3"></div>
-
         </div>
-
     </div>
 {{/partial}}
 
