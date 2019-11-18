@@ -21,7 +21,7 @@ public class HeroTest {
         assertTrue(hero instanceof Hero);
     }
     public Hero newHero(){
-        return new Hero("WonderWoman", 64, "Throwing Fire", "Falling in love", 1);
+        return new Hero("WonderWoman", 64, "Throwing Fire", "water", 1);
     }
     @Test
     public void testAddHeroToSquad_String(){
@@ -39,5 +39,19 @@ public class HeroTest {
         Hero hero = newHero();
         assertEquals(64, hero.getAge());
     }
+    @Test
+    public void testSpecialPowerInstantiatesCorrectly_String() {
+        Hero hero = newHero();
+        assertEquals("Throwing Fire", hero.getSpecialPower());
+    }
+    @Test
+    public void testWeaknessInstantiatesCorrectly_String(){
+        Hero hero = newHero();
+        assertEquals("water", hero.getWeakness());
 
+    }
+    public void testSquadIDInstantiatesCorrectly_Integer(){
+        Hero hero = newHero();
+        assertEquals(1, hero.getSquadId());
+    }
 }
