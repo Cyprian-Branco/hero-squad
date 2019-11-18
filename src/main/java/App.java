@@ -18,10 +18,14 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
+
+
         get("/squad/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "squad-form.hbs");
         }, new HandlebarsTemplateEngine());
+
+
         post("/squad/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             String name = request.queryParams("name");
@@ -42,3 +46,4 @@ public class App {
         }, new HandlebarsTemplateEngine());
     }
 }
+
