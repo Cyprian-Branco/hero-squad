@@ -18,6 +18,6 @@ dependencies {
     compile group: 'org.apache.velocity', name: 'velocity', version: '1.7'
 }
 
-
-
+applicationName = "hero-squad"
+mainClassName = "App"
 task stage(dependsOn: ['clean', 'installDist'])
