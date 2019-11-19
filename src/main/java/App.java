@@ -69,8 +69,8 @@ public class App {
             String newCause = request.queryParams("cause");
             int newMax_size= Integer.parseInt(request.queryParams("max_size"));
             int squadIdToEdit = Integer.parseInt(request.params("id"));
-            Squad editSquad = Squad.findById(squadIdToEdit);
-            editSquad.update(newName, newCause,newMax_size);
+            Squad updateSquad = Squad.findById(squadIdToEdit);
+            updateSquad.update(newName, newCause,newMax_size);
             return new ModelAndView(model,"success.hbs");
         }), new HandlebarsTemplateEngine());
 
@@ -96,12 +96,12 @@ public class App {
         //update heroes properties
         post("/squads/:id/heroes/new", (request, response) -> {
             Map<Object, String>model = new HashMap<>();
-            String name = request.queryParams("name");
-            int age = Integer.parseInt(request.queryParams("age"));
-            String specialPower = request.queryParams("specialPower");
-            String weakness = request.queryParams("weakness");
-            int squadId = Integer.parseInt(request.queryParams(":id"));
-            Hero newHero = new Hero(name, age, specialPower, weakness, squadId);
+            String heroName = request.queryParams("name");
+            int heroAge = Integer.parseInt(request.queryParams("age"));
+            String heroSpecialPower = request.queryParams("specialPower");
+            String heroWeakness = request.queryParams("weakness");
+            int heroSquadId = Integer.parseInt(request.queryParams(":id"));
+            Hero newHero = new Hero(heroName, heroAge, heroSpecialPower, heroWeakness, heroSquadId);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
