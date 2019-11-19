@@ -2,7 +2,6 @@ import models.Hero;
 import models.Squad;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
-import sun.nio.cs.HistoricallyNamedCharset;
 
 import java.util.ArrayList;
 import java.util.HashMap;
